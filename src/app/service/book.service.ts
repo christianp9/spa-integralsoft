@@ -14,13 +14,13 @@ export class BookService {
 
   getBooks() {
      this.books = [];
-    this.http.get<Book[]>(UrlIntegralSoft.url+Api.Books).subscribe(data => {
+    this.http.get<Book[]>(UrlIntegralSoft.URL+Api.BOOKS).subscribe(data => {
       this.books = data;
     });
   }
 
   create(book:Book) {
-    this.http.post(UrlIntegralSoft.url+Api.Books,book).subscribe(data => {
+    this.http.post(UrlIntegralSoft.URL+Api.BOOKS,book).subscribe(data => {
       this.getBooks();
     });
   }

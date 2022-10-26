@@ -1,7 +1,14 @@
 export enum UrlIntegralSoft {
-  url = " https://exam.integralsoft.app/api/"
+  URL = " https://exam.integralsoft.app/api/"
 }
 
 export enum Api {
-  Books = "Books"
+  BOOKS = "Books"
 }
+
+export enum Routes {
+  TABLE_BOOKS = "/tableBooks",
+  CREATE_BOOK = "/createBook"
+}
+
+

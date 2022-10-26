@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
 import {BookService} from "../../../service/book.service";
+import {Routes} from "../../../config/constants";
 
 
 @Component({
@@ -11,8 +12,6 @@ import {BookService} from "../../../service/book.service";
 export class TableBooksComponent implements OnInit {
   displayedColumns: string[] = ['sku', 'title', 'author', 'description','comments', 'created', 'modified'];
 
-
-
   constructor(private router: Router,
               public bookService: BookService) {
   }
@@ -20,5 +19,10 @@ export class TableBooksComponent implements OnInit {
   ngOnInit(): void {
     this.bookService.getBooks();
   }
+  navigateCreateBook(): void {
+    this.router.navigate([Routes.CREATE_BOOK]);
+  }
+
+
 
 }

@@ -3,6 +3,7 @@ import {Forms} from "../../../model/forms/book/book-form";
 import {FormGroup} from "@angular/forms";
 import {Router} from "@angular/router";
 import {BookService} from "../../../service/book.service";
+import {Routes} from "../../../config/constants";
 
 @Component({
   selector: 'app-create-books',
@@ -21,8 +22,11 @@ export class CreateBooksComponent implements OnInit {
   create() {
     if(this.formCreateBook.valid){
       this.bookService.create(this.formCreateBook.value);
-      this.router.navigate(['/tableBooks']);
+      this.router.navigate([Routes.TABLE_BOOKS]);
     }
+  }
+  back() {
+    this.router.navigate([Routes.TABLE_BOOKS]);
   }
 
 }
